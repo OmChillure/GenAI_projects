@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gemini Image App</title>
+</head>
+<body>
+    <h1>Gemini LLM Application</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="input">Input Prompt:</label>
+        <input type="text" id="input" name="input" value="{{ input_text }}">
+        <br>
+        <label for="image">Choose a file (JPG, JPEG, PNG):</label>
+        <input type="file" id="image" name="image" accept="image/jpeg,image/jpg,image/png">
+        <br>
+        <input type="submit" value="Image Desc">
+    </form>
+    {% if image %}
+        <img src="{{ url_for('static', filename=image.filename) }}" alt="Uploaded Image">
+    {% endif %}
+    {% if response %}
+        <p><b>Response:</b> {{ response }}</p>
+    {% endif %}
+</body>
+</html>
