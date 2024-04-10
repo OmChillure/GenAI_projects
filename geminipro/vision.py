@@ -7,7 +7,7 @@ load_dotenv()
 import google.generativeai as genai
 
 os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY")) #your api key
 
 #function to generate response
 def get_response(input,image):
